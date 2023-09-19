@@ -9,6 +9,6 @@ class HomeController extends Controller
 {
     public function index(): string
     {
-        return dashboard();
+        return view('exampleEasycheckout');
     }
 }
