@@ -9,6 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id')->withDefault([
@@ -22,4 +25,15 @@ class Post extends Model
             ->withTimestamps()
             ->withPivot('status'); // this will also retrieve the value of status when relation will loaded
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
+
+    public function comment()
+    {
+        return $this->morphOne(Comment::class, 'commentable');
+    }
+
 }

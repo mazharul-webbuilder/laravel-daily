@@ -61,4 +61,16 @@ Route::get('project-tasks2', function (){
     return Project::with('tasks')->get();
 });
 
+Route::get('/comments', function (){
+    $user = User::find(1);
+    $post = Post::find(1);
+
+    $post->comments()->create(([
+        'user_id' => $user->id,
+        'body' => 'Comment for Post'
+    ]));
+
+    return Post::with('comments')->find(1);
+});
+
 
