@@ -57,3 +57,8 @@ Route::get('project-tasks', function (){
 });
 
 
+Route::get('project-tasks2', function (){
+    return Project::with('tasks')->get();
+});
+
+
