@@ -6,6 +6,10 @@ use App\Models\User;
 use App\Models\Address;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Project;
+
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*HasOne Relation*/
@@ -46,6 +50,10 @@ Route::get('/post-with-tags', function (){
 
 Route::get('/tags-with-posts', function (){
     return Tag::has('posts')->with('posts')->get();
+});
+
+Route::get('project-tasks', function (){
+    return Project::with('tasks')->get();
 });
 
 
