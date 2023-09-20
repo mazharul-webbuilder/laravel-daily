@@ -36,6 +36,15 @@ class DatabaseSeeder extends Seeder
             $post->tags()->attach($tag); // will create a record in post_tag table with post id and tag id
 //            $post->tags()->detach($tag); // This will delete a record with associate post id
 //            $post->tags()->detach(); // This will delete all tags related to this post
+
+            /*To add extra column value data to pivot table*/
+//            $post->tags()->attach([
+//                1 => [
+//                    'status' => 'approved'
+//                ]
+//            ]);
+
+            /*To retrieve pivot table data do like so: $post->tags->first()->pivot->status*/
         });
 
     }
