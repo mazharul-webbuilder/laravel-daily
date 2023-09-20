@@ -19,11 +19,16 @@ class Post extends Model
         ]);
     }
 
-    public function tags()
+    // public function tags()
+    // {
+    //     return $this->belongsToMany(related: Tag::class, table: 'post_tag', foreignPivotKey: 'post_id', relatedPivotKey: 'tag_id')
+    //         ->withTimestamps()
+    //         ->withPivot('status'); // this will also retrieve the value of status when relation will loaded
+    // }
+
+    public function tags()  
     {
-        return $this->belongsToMany(related: Tag::class, table: 'post_tag', foreignPivotKey: 'post_id', relatedPivotKey: 'tag_id')
-            ->withTimestamps()
-            ->withPivot('status'); // this will also retrieve the value of status when relation will loaded
+        return $this->morphToMany(Tag::class, 'taggable');
     }
 
     public function comments()

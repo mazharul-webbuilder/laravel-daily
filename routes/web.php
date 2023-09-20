@@ -73,4 +73,20 @@ Route::get('/comments', function (){
     return Post::with('comments')->find(1);
 });
 
+Route::get('/many-to-many-morphs-with-pivot', function (){
+    $post = Post::find(1);
+
+//    $post->tags()->create([
+//        'name' => 'Laravel'
+//    ]);
+//
+//    $post->tags()->attach(Tag::find(1));
+
+//    return $post->tags;
+
+    $tag = Tag::find(1);
+    return $tag->videos;
+
+});
+
 
