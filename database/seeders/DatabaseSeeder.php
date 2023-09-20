@@ -5,6 +5,8 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Address;
 use App\Models\Post;
+use App\Models\PostTag;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -22,10 +24,19 @@ class DatabaseSeeder extends Seeder
                'country' => fake()->country,
             ]);
 
-            Post::create([
+            $post = Post::create([
                 'user_id' => $user->id,
                 'title' => fake()->sentence
             ]);
+
+            $tag = Tag::create([
+                'name' => fake()->name,
+            ]);
+
+            $post->tags()->attach($tag); // will create a record in post_tag table with post id and tag id
+//            $post->tags()->detach($tag); // This will delete a record with associate post id
+//            $post->tags()->detach(); // This will delete all tags related to this post
         });
+
     }
 }

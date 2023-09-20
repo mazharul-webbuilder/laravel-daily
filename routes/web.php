@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Models\User;
 use App\Models\Address;
 use App\Models\Post;
-
+use App\Models\Tag;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*HasOne Relation*/
@@ -39,4 +39,13 @@ Route::get('/user-with-posts', function (){
     /*Users who doesn't post*/
     return User::doesntHave('posts')->get();
 });
+
+Route::get('/post-with-tags', function (){
+    return Post::has('tags')->with(['user', 'tags'])->get();
+});
+
+Route::get('/tags-with-posts', function (){
+    return Tag::has('posts')->with('posts')->get();
+});
+
 
