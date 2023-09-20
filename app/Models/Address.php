@@ -13,4 +13,7 @@ class Address extends Model
     {
         return $this->belongsTo(User::class, 'user_id', 'id'); // usr_id foreign key of address table, id is primary key of users table
     }
+
+
+
 }
