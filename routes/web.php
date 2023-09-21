@@ -6,6 +6,11 @@ use App\Models\User;
 use App\Models\Address;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Http\Controllers\TwilioSMSController;
+
+
+
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*HasOne Relation*/
@@ -47,5 +52,11 @@ Route::get('/post-with-tags', function (){
 Route::get('/tags-with-posts', function (){
     return Tag::has('posts')->with('posts')->get();
 });
+
+
+/*Twilio SMS OTP Sent*/
+Route::get('sendSmsOTP', [TwilioSMSController::class, 'index']);
+
+
 
 
