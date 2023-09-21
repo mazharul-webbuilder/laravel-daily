@@ -6,7 +6,7 @@
 if (!function_exists('test')) {
     function dashboard(): string
     {
-        return 'dashboard';
+        return 'Please Check Github Branches to Know Your Solution';
     }
 }
 
