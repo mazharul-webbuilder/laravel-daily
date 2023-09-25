@@ -55,6 +55,43 @@ Route::get('/tags-with-posts', function (){
     return Tag::has('posts')->with('posts')->get();
 });
 
+Route::get('project-tasks', function (){
+    return Project::with('tasks')->get();
+});
+
+
+Route::get('project-tasks2', function (){
+    return Project::with('tasks')->get();
+});
+
+Route::get('/comments', function (){
+    $user = User::find(1);
+    $post = Post::find(1);
+
+    $post->comments()->create(([
+        'user_id' => $user->id,
+        'body' => 'Comment for Post'
+    ]));
+
+    return Post::with('comments')->find(1);
+});
+
+Route::get('/many-to-many-morphs-with-pivot', function (){
+    $post = Post::find(1);
+
+//    $post->tags()->create([
+//        'name' => 'Laravel'
+//    ]);
+//
+//    $post->tags()->attach(Tag::find(1));
+
+//    return $post->tags;
+
+    $tag = Tag::find(1);
+    return $tag->videos;
+
+});
+
 
 /*Twilio SMS OTP Sent*/
 Route::get('sendSmsOTP', [TwilioSMSController::class, 'index']);
