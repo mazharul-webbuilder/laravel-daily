@@ -6,9 +6,12 @@ use App\Models\User;
 use App\Models\Address;
 use App\Models\Post;
 use App\Models\Tag;
-use App\Models\Project;
+use App\Http\Controllers\TwilioSMSController;
 
 
+
+
+require __DIR__ . '/laravelCollection.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -90,3 +93,5 @@ Route::get('/many-to-many-morphs-with-pivot', function (){
 });
 
 
+/*Twilio SMS OTP Sent*/
+Route::get('sendSmsOTP', [TwilioSMSController::class, 'index']);
