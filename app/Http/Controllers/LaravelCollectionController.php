@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class LaravelCollectionController extends Controller
 {
@@ -19,5 +20,49 @@ class LaravelCollectionController extends Controller
 
         dd($collection);
     }
+
+    /**
+     * This macro will create customize method which will be
+     * performed over any collection
+    */
+    public function macro()
+    {
+        Collection::macro('cutomMakeUpperCase', function (){
+            return $this->map(function ($value) {
+                return Str::upper($value);
+            });
+        });
+
+        $collection = collect(['first', 'second']);
+
+        dd($collection->cutomMakeUpperCase());
+    }
+
+    public function chunk()
+    {
+        $collection = collect([1, 3, 4, 6, 7 ]);
+
+        $chunks =  $collection->chunk(2);
+
+        foreach ($chunks as $chunk) {
+            foreach ($chunk as $item) {
+                echo 'Item' . $item . '</br>';
+            }
+        }
+    }
+
+    public function excepts()
+    {
+        $collection = collect([
+            ['id' => 1, 'name' => 'Mazharul Islam', 'city' => 'Dhaka'],
+            ['id' => 2, 'name' => 'Lammim Islam', 'city' => 'Cumilla']
+        ]);
+
+        $modifiedCollection = $collection->map(function ($item) {
+            return collect($item)->except(['name', 'city'])->all();
+        });
+
+        return $modifiedCollection;
+    }
+
 }
-z
