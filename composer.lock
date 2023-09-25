@@ -1169,6 +1169,7 @@
                 "source": "https://github.com/laravel/framework"
             },
             "time": "2023-09-19T15:25:04+00:00"
+
         },
         {
             "name": "laravel/prompts",
@@ -5869,6 +5870,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/pint/zipball/bbb13460d7f8c5c0cd9a58109beedd79cd7331ff",
                 "reference": "bbb13460d7f8c5c0cd9a58109beedd79cd7331ff",
+
                 "shasum": ""
             },
             "require": {
@@ -5935,6 +5937,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sail/zipball/e81a7bd7ac1a745ccb25572830fecf74a89bb48a",
                 "reference": "e81a7bd7ac1a745ccb25572830fecf74a89bb48a",
+
                 "shasum": ""
             },
             "require": {
@@ -5987,6 +5990,7 @@
                 "source": "https://github.com/laravel/sail"
             },
             "time": "2023-09-11T17:37:09+00:00"
+
         },
         {
             "name": "laravel/telescope",
@@ -6740,6 +6744,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/747c3b2038f1139e3dcd9886a3f5a948648b7503",
                 "reference": "747c3b2038f1139e3dcd9886a3f5a948648b7503",
+
                 "shasum": ""
             },
             "require": {
@@ -6812,6 +6817,7 @@
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/10.3.5"
+
             },
             "funding": [
                 {
@@ -6828,6 +6834,7 @@
                 }
             ],
             "time": "2023-09-19T05:42:37+00:00"
+
         },
         {
             "name": "sebastian/cli-parser",
@@ -7274,6 +7281,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/c3fa8483f9539b190f7cd4bfc4a07631dd1df344",
                 "reference": "c3fa8483f9539b190f7cd4bfc4a07631dd1df344",
+
                 "shasum": ""
             },
             "require": {
@@ -7331,6 +7339,7 @@
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
                 "security": "https://github.com/sebastianbergmann/exporter/security/policy",
                 "source": "https://github.com/sebastianbergmann/exporter/tree/5.1.0"
+
             },
             "funding": [
                 {
@@ -7339,6 +7348,7 @@
                 }
             ],
             "time": "2023-09-18T07:15:37+00:00"
+
         },
         {
             "name": "sebastian/global-state",

@@ -9,8 +9,20 @@ class Tag extends Model
 {
     use HasFactory;
 
-    public function posts()
-    {
-        return $this->belongsToMany(related: Post::class, table: 'post_tag', foreignPivotKey: 'tag_id', relatedPivotKey: 'post_id');
-    }
+    protected $fillable = ['name'];
+
+//    public function posts()
+//    {
+//        return $this->belongsToMany(related: Post::class, table: 'post_tag', foreignPivotKey: 'tag_id', relatedPivotKey: 'post_id');
+//    }
+
+        public function posts()
+        {
+            return $this->morphedByMany(Post::class, 'taggable');
+        }
+
+        public function videos()
+        {
+            return $this->morphedByMany(Video::class, 'taggable');
+        }
 }
