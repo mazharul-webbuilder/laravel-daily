@@ -18,6 +18,10 @@ class LaravelCollectionController extends Controller
             ->map(function (string $name = null){return strtoupper($name);})
             ->reject(function (string $name){return empty($name);});
 
+        /*Will execute rest of the code*/
+        dump($collection);
+
+        /*Will not execute rest of the code*/
         dd($collection);
     }
 
