@@ -11,6 +11,8 @@ use App\Http\Controllers\TwilioSMSController;
 
 
 
+require __DIR__ . '/laravelCollection.php';
+
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 /*HasOne Relation*/
@@ -56,7 +58,3 @@ Route::get('/tags-with-posts', function (){
 
 /*Twilio SMS OTP Sent*/
 Route::get('sendSmsOTP', [TwilioSMSController::class, 'index']);
-
-
-
-
