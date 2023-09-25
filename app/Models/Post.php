@@ -33,7 +33,11 @@ class Post extends Model
 
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable');
+        return $this->belongsToMany(related: Tag::class, table: 'post_tag', foreignPivotKey: 'post_id', relatedPivotKey: 'tag_id')
+            ->using(PostTag::class)
+            ->withTimestamps()
+            ->withPivot('status'); // this will also retrieve the value of status when relation will loaded
+
     }
 
     public function comment()

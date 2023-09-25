@@ -39,7 +39,7 @@ class DatabaseSeeder extends Seeder
 
             /*To add extra column value data to pivot table*/
 //            $post->tags()->attach([
-//                1 => [
+//                $tag->id => [
 //                    'status' => 'approved'
 //                ]
 //            ]);
