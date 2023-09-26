@@ -7,6 +7,14 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
 {
+
+
+    protected $commands = [
+        \App\Console\Commands\MyCustomCommand::class,
+        \App\Console\Commands\CallControllerMethod::class,
+        \App\Console\Commands\collectionPractice::class,
+    ];
+
     /**
      * Define the application's command schedule.
      */
