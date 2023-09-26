@@ -8,6 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use App\Events\MyEvent;
 
 class Myjob implements ShouldQueue
 {
@@ -28,6 +29,14 @@ class Myjob implements ShouldQueue
      */
     public function handle(): void
     {
-        info('Job Handles'. $this->data);
+//        before run
+//        run php artisan queue:table
+//        run php artisan migrate
+//        info('Job Handles'. $this->data);
+
+        /*Without Data Pass*/
+//        event(new MyEvent());
+        /*With Data Pass*/
+        event(new MyEvent('data'));
     }
 }
