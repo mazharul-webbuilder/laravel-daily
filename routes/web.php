@@ -12,6 +12,7 @@ use App\Http\Controllers\TwilioSMSController;
 
 
 require __DIR__ . '/laravelCollection.php';
+require __DIR__ . '/queue_and_job_processing.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
