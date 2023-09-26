@@ -85,3 +85,16 @@ $tag = Tag::find(1);
 return $tag->videos;
 
 });
+
+/*Write sub query with also use whereHas*/
+Route::get('where-has', function (){
+
+    $country = 'Tunisia';
+
+    $users = User::with('address')->whereHas('address', function ($query) use ($country){
+        $query->where('country', $country);
+    })->get();
+
+    return $users;
+});
+
