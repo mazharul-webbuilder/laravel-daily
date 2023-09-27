@@ -98,3 +98,11 @@ Route::get('where-has', function (){
     return $users;
 });
 
+Route::get('where-has2', function (){
+    $addrssesWithUser = Address::with('user')->whereHas('user', function ($q){
+        return $q->where('id', '1');
+    })->get();
+
+    return $addrssesWithUser;
+});
+
