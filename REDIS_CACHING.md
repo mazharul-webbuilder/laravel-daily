@@ -35,7 +35,7 @@ project for local development on a Windows PC and production on a Linux server.
     - Press `Win + R`, type `cmd`, and press Enter.
 
 2. **Check Redis Status:**
-    - Run the following command:
+    - Run the following command where your redis is installed. EX: C:/redis:
       ```bash
       redis-cli ping
       ```
