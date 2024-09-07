@@ -260,3 +260,9 @@ You need to ensure that the PhpRedis extension is installed and enabled in your 
      ```
 9. Restart the xampp.
 10. Done
+
+### There is a application where you can manage your redis
+```text
+"Redis Insight" 
+```
+https://redis.io/insight/
