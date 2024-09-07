@@ -11,9 +11,9 @@ project for local development on a Windows PC and production on a Linux server.
     - **NOTE: Please use windows default command prompt as administrative permission**
 
     - Run Redis Server:
-  ```bash
-  redis-server.exe redis.windows.conf
-  ```
+      ```bash
+      redis-server.exe redis.windows.conf
+      ```
 
 2. **Run Redis as a Windows Service (Optional)**:
     - Install Redis as a service:
