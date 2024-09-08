@@ -31,6 +31,8 @@ project for local development on a Windows PC and production on a Linux server.
 
 ### For Windows
 
+- Note: **To Access redis-cli globally you need to set redis installed path to the global variable, go to windows enviornment variable and in system section, double click on path and add the copied path and save**
+
 1. **Open Command Prompt:**
     - Press `Win + R`, type `cmd`, and press Enter.
 
